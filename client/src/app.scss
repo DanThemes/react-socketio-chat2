@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+
+  .message-author {
+    font-weight: bold;
+  }
+
+  .message-content {
+    background: rgb(99, 178, 209);
+    margin:0.25rem;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &.own-message {
+    align-items: flex-end;
+
+    .message-content {
+      background: rgb(99, 209, 178)
+    }
+  }
+
+  .message-meta {
+    font-size: 0.8rem;
+  }
+}
