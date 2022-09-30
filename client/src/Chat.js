@@ -48,8 +48,19 @@ const Chat = ({ socket, username, room }) => {
             })}
         </div>
         <div className="chat-footer">
-            <input type="text" placeholder="Enter a message..." value={currentMessage} onChange={e => setCurrentMessage(e.target.value)} />
-            <button onClick={sendMessage}>Send</button>
+            <input 
+              type="text" 
+              placeholder="Enter a message..." 
+              value={currentMessage} 
+              onChange={e => setCurrentMessage(e.target.value)}
+              onKeyDownCapture={
+                e => e.key === 'Enter' && sendMessage()
+              }
+              tabIndex={0}
+            />
+            <button 
+              onClick={sendMessage}
+            >Send</button>
         </div>
     </div>
   )
